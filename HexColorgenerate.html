@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color{
+     
+            width: 50vw;
+            height: 50vh;
+            border: 2px solid red;
+          
+        }
+        .container{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #col{
+
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 2rem;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="color">
+
+        </div>
+
+        <button id="col">Color</button>
+        <h1 id="colnam"></h1>
+    </div>
+
+    <script>
+       
+        
+let btn= document.querySelector("#col");
+btn.addEventListener("click",(e)=>{
+    console.log(e);
+    let mystr="0123456789ABCDEF"
+        // console.log(mystr[2]);
+
+        let color="";
+        for (let i = 0; i <6; i++) {
+            let random= Math.floor(Math.random()*16);
+            console.log(random);
+            let value= mystr.charAt(random);
+            console.log(value);
+            
+            color= color+ value;
+            
+        }
+        
+        console.log(color);
+    
+    let mycol= document.querySelector(".color");
+    mycol.style.backgroundColor=`#${color}`;
+
+
+    let colorName= document.querySelector("#colnam");
+    colorName.innerHTML=`HEX COLOR CODE : ${color}`;
+});
+
+
+    </script>
+    
+</body>
+</html>
